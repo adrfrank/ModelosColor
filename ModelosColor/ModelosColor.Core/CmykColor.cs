@@ -13,7 +13,7 @@ namespace ModelosColor.Core
         CmyNormalized
     }
 
-    public class CmykColor : IRgbCompatible, IYiqCompatible, ICmykComatible, IXyzCompatible
+    public class CmykColor : IRgbCompatible, IYiqCompatible, ICmykComatible, IXyzCompatible, IHsvCompatible
     {
         float c, m, y, k;
         CmykType type;
@@ -94,6 +94,11 @@ namespace ModelosColor.Core
         public XyzColor ToXyz()
         {
             return ToRgb().ToXyz();
+        }
+
+        HsvColor ToHsv()
+        {
+            return ToRgb().ToHsv();
         }
     }
 }
