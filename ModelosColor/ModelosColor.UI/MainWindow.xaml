@@ -16,7 +16,7 @@
             <ColumnDefinition Width="119*"/>
             <ColumnDefinition Width="464*"/>
         </Grid.ColumnDefinitions>
-        <Rectangle Fill="#FF2828A4" Grid.Column="0" Grid.Row="0" Height="91" Margin="10,10,10,0" Stroke="Black" VerticalAlignment="Top"/>
+        <Rectangle  Fill="{Binding RectColor, Mode=OneWay}" Grid.Column="0" Grid.Row="0" Height="91" Margin="10,10,10,0" Stroke="Black" VerticalAlignment="Top"/>
         <StackPanel Grid.Column="1" Margin="10">
             <Grid >
                 <Grid.ColumnDefinitions>
@@ -35,9 +35,9 @@
                 <Label Grid.Column="1" Content="R"  HorizontalAlignment="Right" FontSize="{DynamicResource ParamFontSize}" VerticalAlignment="{DynamicResource ParamVerticalAlignment}"/>
                 <Label Grid.Column="3" Content="G" HorizontalAlignment="Right" FontSize="{DynamicResource ParamFontSize}" VerticalAlignment="{DynamicResource ParamVerticalAlignment}"/>
                 <Label Grid.Column="5" Content="B" HorizontalAlignment="Right" FontSize="{DynamicResource ParamFontSize}" VerticalAlignment="{DynamicResource ParamVerticalAlignment}"></Label>
-                <TextBox Grid.Column="2" x:Name="rgb_r" Text="0" FontSize="{DynamicResource ParamFontSize}" VerticalContentAlignment="Center" VerticalAlignment="Center"/>
-                <TextBox Grid.Column="4" x:Name="rgb_g" FontSize="{DynamicResource ParamFontSize}" VerticalContentAlignment="Center" VerticalAlignment="Center"/>
-                <TextBox Grid.Column="6" x:Name="rgb_b" VerticalContentAlignment="Center" VerticalAlignment="Center" FontSize="{DynamicResource ParamFontSize}"/>
+                <TextBox Grid.Column="2"  Text="{Binding RgbR}" FontSize="{DynamicResource ParamFontSize}" VerticalContentAlignment="Center" VerticalAlignment="Center"/>
+                <TextBox Grid.Column="4"  Text="{Binding RgbG}" FontSize="{DynamicResource ParamFontSize}" VerticalContentAlignment="Center" VerticalAlignment="Center"/>
+                <TextBox Grid.Column="6"  Text="{Binding RgbB}" VerticalContentAlignment="Center" VerticalAlignment="Center" FontSize="{DynamicResource ParamFontSize}"/>
             </Grid>
             <Grid >
                 <Grid.ColumnDefinitions>
@@ -56,9 +56,9 @@
                 <Label Grid.Column="1" Content="R"  HorizontalAlignment="Right" FontSize="{DynamicResource ParamFontSize}" VerticalAlignment="{DynamicResource ParamVerticalAlignment}"/>
                 <Label Grid.Column="3" Content="G" HorizontalAlignment="Right" FontSize="{DynamicResource ParamFontSize}" VerticalAlignment="{DynamicResource ParamVerticalAlignment}"/>
                 <Label Grid.Column="5" Content="B" HorizontalAlignment="Right" FontSize="{DynamicResource ParamFontSize}" VerticalAlignment="{DynamicResource ParamVerticalAlignment}"></Label>
-                <TextBox Grid.Column="2" x:Name="rgbperc_r" Text="0" FontSize="{DynamicResource ParamFontSize}" VerticalContentAlignment="Center" VerticalAlignment="Center"/>
-                <TextBox Grid.Column="4" x:Name="rgbperc_g" FontSize="{DynamicResource ParamFontSize}" VerticalContentAlignment="Center" VerticalAlignment="Center"/>
-                <TextBox Grid.Column="6" x:Name="rgbperc_b" VerticalContentAlignment="Center" VerticalAlignment="Center" FontSize="{DynamicResource ParamFontSize}"/>
+                <TextBox Grid.Column="2"  Text="{Binding RgbPercR}" FontSize="{DynamicResource ParamFontSize}" VerticalContentAlignment="Center" VerticalAlignment="Center"/>
+                <TextBox Grid.Column="4" Text="{Binding RgbPercG}" FontSize="{DynamicResource ParamFontSize}" VerticalContentAlignment="Center" VerticalAlignment="Center"/>
+                <TextBox Grid.Column="6" Text="{Binding RgbPercB}" VerticalContentAlignment="Center" VerticalAlignment="Center" FontSize="{DynamicResource ParamFontSize}"/>
             </Grid>
             <Grid >
                 <Grid.ColumnDefinitions>
@@ -70,16 +70,18 @@
                     <ColumnDefinition  Width="1*"></ColumnDefinition>
                     <ColumnDefinition  Width="1*"></ColumnDefinition>
                     <ColumnDefinition  Width="1*"></ColumnDefinition>
-                    <ColumnDefinition  Width="1*"></ColumnDefinition>
-                    <ColumnDefinition  Width="1*"></ColumnDefinition>
+                    <ColumnDefinition  Width="2*"></ColumnDefinition>
+                    <!--<ColumnDefinition  Width="1*"></ColumnDefinition>-->
                 </Grid.ColumnDefinitions>
                 <Label Content="RGB (Byte)"  Grid.Column="0" FontWeight="{DynamicResource TitleFontBold}" FontSize="{DynamicResource TitleSize}" Height="{DynamicResource TitleHeight}"/>
                 <Label Grid.Column="1" Content="R"  HorizontalAlignment="Right" FontSize="{DynamicResource ParamFontSize}" VerticalAlignment="{DynamicResource ParamVerticalAlignment}"/>
                 <Label Grid.Column="3" Content="G" HorizontalAlignment="Right" FontSize="{DynamicResource ParamFontSize}" VerticalAlignment="{DynamicResource ParamVerticalAlignment}"/>
                 <Label Grid.Column="5" Content="B" HorizontalAlignment="Right" FontSize="{DynamicResource ParamFontSize}" VerticalAlignment="{DynamicResource ParamVerticalAlignment}"></Label>
-                <TextBox Grid.Column="2" x:Name="rgbbyte_r" Text="0" FontSize="{DynamicResource ParamFontSize}" VerticalContentAlignment="Center" VerticalAlignment="Center"/>
-                <TextBox Grid.Column="4" x:Name="rgbbyte_g" FontSize="{DynamicResource ParamFontSize}" VerticalContentAlignment="Center" VerticalAlignment="Center"/>
-                <TextBox Grid.Column="6" x:Name="rgbbyte_b" VerticalContentAlignment="Center" VerticalAlignment="Center" FontSize="{DynamicResource ParamFontSize}"/>
+                <Label Grid.Column="7" Content="Hex" HorizontalAlignment="Right" FontSize="{DynamicResource ParamFontSize}" VerticalAlignment="{DynamicResource ParamVerticalAlignment}"></Label>
+                <TextBox Grid.Column="2" Text="{Binding RgbByteR}" FontSize="{DynamicResource ParamFontSize}" VerticalContentAlignment="Center" VerticalAlignment="Center"/>
+                <TextBox Grid.Column="4" Text="{Binding RgbByteG}" FontSize="{DynamicResource ParamFontSize}" VerticalContentAlignment="Center" VerticalAlignment="Center"/>
+                <TextBox Grid.Column="6" Text="{Binding RgbByteB}" VerticalContentAlignment="Center" VerticalAlignment="Center" FontSize="{DynamicResource ParamFontSize}"/>
+                <TextBox Grid.Column="8" Text="{Binding Hex}" VerticalContentAlignment="Center" VerticalAlignment="Center" FontSize="{DynamicResource ParamFontSize}"/>
             </Grid>
             <Grid>
                 <Grid.ColumnDefinitions>
@@ -98,9 +100,9 @@
                 <Label Grid.Column="1" Content="C"  HorizontalAlignment="Right" FontSize="{DynamicResource ParamFontSize}" VerticalAlignment="{DynamicResource ParamVerticalAlignment}"></Label>
                 <Label Grid.Column="3" Content="M" HorizontalAlignment="Right" FontSize="{DynamicResource ParamFontSize}" VerticalAlignment="{DynamicResource ParamVerticalAlignment}"></Label>
                 <Label Grid.Column="5" Content="Y" HorizontalAlignment="Right" FontSize="{DynamicResource ParamFontSize}" VerticalAlignment="{DynamicResource ParamVerticalAlignment}"></Label>
-                <TextBox Grid.Column="2" x:Name="cmy_c" VerticalContentAlignment="Center" VerticalAlignment="Center" FontSize="{DynamicResource ParamFontSize}"/>
-                <TextBox Grid.Column="4" x:Name="cmy_m" VerticalContentAlignment="Center" VerticalAlignment="Center" FontSize="{DynamicResource ParamFontSize}"/>
-                <TextBox Grid.Column="6" x:Name="cmy_y" VerticalContentAlignment="Center" VerticalAlignment="Center" FontSize="{DynamicResource ParamFontSize}"/>
+                <TextBox Grid.Column="2" Text="{Binding CmyC}" VerticalContentAlignment="Center" VerticalAlignment="Center" FontSize="{DynamicResource ParamFontSize}"/>
+                <TextBox Grid.Column="4" Text="{Binding CmyM}" VerticalContentAlignment="Center" VerticalAlignment="Center" FontSize="{DynamicResource ParamFontSize}"/>
+                <TextBox Grid.Column="6" Text="{Binding CmyY}" VerticalContentAlignment="Center" VerticalAlignment="Center" FontSize="{DynamicResource ParamFontSize}"/>
             </Grid>
             <Grid>
                 <Grid.ColumnDefinitions>
@@ -120,10 +122,10 @@
                 <Label Grid.Column="3" Content="M" HorizontalAlignment="Right" FontSize="{DynamicResource ParamFontSize}" VerticalAlignment="{DynamicResource ParamVerticalAlignment}"></Label>
                 <Label Grid.Column="5" Content="Y" HorizontalAlignment="Right" FontSize="{DynamicResource ParamFontSize}" VerticalAlignment="{DynamicResource ParamVerticalAlignment}"></Label>
                 <Label Grid.Column="7" Content="K" HorizontalAlignment="Right" FontSize="{DynamicResource ParamFontSize}" VerticalAlignment="{DynamicResource ParamVerticalAlignment}"></Label>
-                <TextBox Grid.Column="2" x:Name="cmyk_c" VerticalContentAlignment="Center" VerticalAlignment="Center" FontSize="{DynamicResource ParamFontSize}"/>
-                <TextBox Grid.Column="4" x:Name="cmyk_m" VerticalContentAlignment="Center" VerticalAlignment="Center" FontSize="{DynamicResource ParamFontSize}"/>
-                <TextBox Grid.Column="6" x:Name="cmyk_y" VerticalContentAlignment="Center" VerticalAlignment="Center" FontSize="{DynamicResource ParamFontSize}"/>
-                <TextBox Grid.Column="8" x:Name="cmyk_K" VerticalContentAlignment="Center" VerticalAlignment="Center" FontSize="{DynamicResource ParamFontSize}"/>
+                <TextBox Grid.Column="2" Text="{Binding CmykC}"  VerticalContentAlignment="Center" VerticalAlignment="Center" FontSize="{DynamicResource ParamFontSize}"/>
+                <TextBox Grid.Column="4" Text="{Binding CmykM}" VerticalContentAlignment="Center" VerticalAlignment="Center" FontSize="{DynamicResource ParamFontSize}"/>
+                <TextBox Grid.Column="6" Text="{Binding CmykY}" VerticalContentAlignment="Center" VerticalAlignment="Center" FontSize="{DynamicResource ParamFontSize}"/>
+                <TextBox Grid.Column="8" Text="{Binding CmykK}" VerticalContentAlignment="Center" VerticalAlignment="Center" FontSize="{DynamicResource ParamFontSize}"/>
             </Grid>
             <Grid>
                 <Grid.ColumnDefinitions>
@@ -142,9 +144,9 @@
                 <Label Grid.Column="1" Content="H"  HorizontalAlignment="Right" FontSize="{DynamicResource ParamFontSize}" VerticalAlignment="{DynamicResource ParamVerticalAlignment}"></Label>
                 <Label Grid.Column="3" Content="S" HorizontalAlignment="Right" FontSize="{DynamicResource ParamFontSize}" VerticalAlignment="{DynamicResource ParamVerticalAlignment}"></Label>
                 <Label Grid.Column="5" Content="V" HorizontalAlignment="Right" FontSize="{DynamicResource ParamFontSize}" VerticalAlignment="{DynamicResource ParamVerticalAlignment}"></Label>
-                <TextBox Grid.Column="2" x:Name="hsv_h" VerticalContentAlignment="Center" VerticalAlignment="Center" FontSize="{DynamicResource ParamFontSize}"/>
-                <TextBox Grid.Column="4" x:Name="hsv_s" VerticalContentAlignment="Center" VerticalAlignment="Center" FontSize="{DynamicResource ParamFontSize}"/>
-                <TextBox Grid.Column="6" x:Name="hsv_v" VerticalContentAlignment="Center" VerticalAlignment="Center" FontSize="{DynamicResource ParamFontSize}"/>
+                <TextBox Grid.Column="2" Text="{Binding HsvH}" VerticalContentAlignment="Center" VerticalAlignment="Center" FontSize="{DynamicResource ParamFontSize}"/>
+                <TextBox Grid.Column="4" Text="{Binding HsvS}" VerticalContentAlignment="Center" VerticalAlignment="Center" FontSize="{DynamicResource ParamFontSize}"/>
+                <TextBox Grid.Column="6" Text="{Binding HsvV}" VerticalContentAlignment="Center" VerticalAlignment="Center" FontSize="{DynamicResource ParamFontSize}"/>
             </Grid>
             <Grid>
                 <Grid.ColumnDefinitions>
@@ -163,9 +165,9 @@
                 <Label Grid.Column="1" Content="Y"  HorizontalAlignment="Right" FontSize="{DynamicResource ParamFontSize}" VerticalAlignment="{DynamicResource ParamVerticalAlignment}"></Label>
                 <Label Grid.Column="3" Content="I" HorizontalAlignment="Right" FontSize="{DynamicResource ParamFontSize}" VerticalAlignment="{DynamicResource ParamVerticalAlignment}"></Label>
                 <Label Grid.Column="5" Content="Q" HorizontalAlignment="Right" FontSize="{DynamicResource ParamFontSize}" VerticalAlignment="{DynamicResource ParamVerticalAlignment}"></Label>
-                <TextBox Grid.Column="2" x:Name="yiq_y" VerticalContentAlignment="Center" VerticalAlignment="Center" FontSize="{DynamicResource ParamFontSize}"/>
-                <TextBox Grid.Column="4" x:Name="yiq_i" VerticalContentAlignment="Center" VerticalAlignment="Center" FontSize="{DynamicResource ParamFontSize}"/>
-                <TextBox Grid.Column="6" x:Name="yiq_q" VerticalContentAlignment="Center" VerticalAlignment="Center" FontSize="{DynamicResource ParamFontSize}"/>
+                <TextBox Grid.Column="2" Text="{Binding YiqY}" VerticalContentAlignment="Center" VerticalAlignment="Center" FontSize="{DynamicResource ParamFontSize}"/>
+                <TextBox Grid.Column="4" Text="{Binding YiqI}" VerticalContentAlignment="Center" VerticalAlignment="Center" FontSize="{DynamicResource ParamFontSize}"/>
+                <TextBox Grid.Column="6" Text="{Binding YiqQ}" VerticalContentAlignment="Center" VerticalAlignment="Center" FontSize="{DynamicResource ParamFontSize}"/>
             </Grid>
             <Grid>
                 <Grid.ColumnDefinitions>
@@ -184,9 +186,9 @@
                 <Label Grid.Column="1" Content="X"  HorizontalAlignment="Right" FontSize="{DynamicResource ParamFontSize}" VerticalAlignment="{DynamicResource ParamVerticalAlignment}"></Label>
                 <Label Grid.Column="3" Content="Y" HorizontalAlignment="Right" FontSize="{DynamicResource ParamFontSize}" VerticalAlignment="{DynamicResource ParamVerticalAlignment}"></Label>
                 <Label Grid.Column="5" Content="Z" HorizontalAlignment="Right" FontSize="{DynamicResource ParamFontSize}" VerticalAlignment="{DynamicResource ParamVerticalAlignment}"></Label>
-                <TextBox Grid.Column="2" x:Name="xyz_x" VerticalContentAlignment="Center" VerticalAlignment="Center" FontSize="{DynamicResource ParamFontSize}"/>
-                <TextBox Grid.Column="4" x:Name="xyz_y" VerticalContentAlignment="Center" VerticalAlignment="Center" FontSize="{DynamicResource ParamFontSize}"/>
-                <TextBox Grid.Column="6" x:Name="xyz_z" VerticalContentAlignment="Center" VerticalAlignment="Center" FontSize="{DynamicResource ParamFontSize}"/>
+                <TextBox Grid.Column="2" Text="{Binding XyzX}" VerticalContentAlignment="Center" VerticalAlignment="Center" FontSize="{DynamicResource ParamFontSize}"/>
+                <TextBox Grid.Column="4" Text="{Binding XyzY}" VerticalContentAlignment="Center" VerticalAlignment="Center" FontSize="{DynamicResource ParamFontSize}"/>
+                <TextBox Grid.Column="6" Text="{Binding XyzZ}" VerticalContentAlignment="Center" VerticalAlignment="Center" FontSize="{DynamicResource ParamFontSize}"/>
             </Grid>
         </StackPanel>
 

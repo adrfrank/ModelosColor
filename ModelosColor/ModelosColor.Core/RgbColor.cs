@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ModelosColor.Core.Interfacces;
+using System.Text.RegularExpressions;
 
 namespace ModelosColor.Core
 {
@@ -61,8 +62,35 @@ namespace ModelosColor.Core
 
         public string Hex
         {
-            set { }
+            set {
+                string v = value.Trim();
+                if (ValidHex(v))
+                {
+                    v = v.ToUpper();
+                    v = v.StartsWith("#")?v.Substring(1):v;
+                    int rb, bb, gb;
+                    rb = Convert.ToInt32(v.Substring(0, 2),16);
+                    gb = Convert.ToInt32(v.Substring(2, 2), 16);
+                    bb = Convert.ToInt32(v.Substring(4, 2), 16);
+                    var tempColor = new RgbColor(RgbType.Byte) { R = rb, B = bb, G = gb }.ToRgb(Type);
+                    R = tempColor.R;
+                    G = tempColor.G;
+                    b = tempColor.B;
 
+                }
+            }
+            get
+            {
+                var c = ToRgb(RgbType.Byte);
+                return string.Format("#{0:X2}{1:X2}{2:X2}", (int)c.R, (int)c.G, (int)c.B);
+            }
+
+        }
+
+        public static bool ValidHex(string value)
+        {
+            var reg = new Regex(@"^#?(\d|[a-f]|[A-F]){6}$");
+            return reg.IsMatch(value);
         }
 
         public RgbColor(RgbType type = RgbType.Normalized)

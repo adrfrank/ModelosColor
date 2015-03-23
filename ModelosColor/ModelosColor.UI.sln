@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModelosColor.UI", "ModelosC
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModelosColor.Core", "ModelosColor.Core\ModelosColor.Core.csproj", "{23D3435B-6DE1-44F6-AAF9-D69CC75B3E9C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModelosColor.Test", "ModelosColor.Test\ModelosColor.Test.csproj", "{D052BD57-271B-4F48-80DE-36908222EB73}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{23D3435B-6DE1-44F6-AAF9-D69CC75B3E9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{23D3435B-6DE1-44F6-AAF9-D69CC75B3E9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{23D3435B-6DE1-44F6-AAF9-D69CC75B3E9C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D052BD57-271B-4F48-80DE-36908222EB73}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D052BD57-271B-4F48-80DE-36908222EB73}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D052BD57-271B-4F48-80DE-36908222EB73}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D052BD57-271B-4F48-80DE-36908222EB73}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

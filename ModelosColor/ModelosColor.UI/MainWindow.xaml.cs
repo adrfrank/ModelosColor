@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ModelosColor.UI.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,12 @@ namespace ModelosColor.UI
     /// </summary>
     public partial class MainWindow : Window
     {
+        public ConvertColorsViewModel ViewModel { set { DataContext = value; } }
+        
         public MainWindow()
         {
             InitializeComponent();
+            ViewModel = new ConvertColorsViewModel();
         }
     }
 }
