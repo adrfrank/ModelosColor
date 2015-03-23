@@ -30,7 +30,9 @@ namespace ModelosColor.UI.ViewModels
 
         public string Hex
         {
-            get { return hex; }
+            get {
+                hex = hex ?? basecolor.Hex;
+                return hex; }
             set { hex = value; OnPropertyChanged(); if (!changingValues) update(ColorModel.hex); }
         }
 
@@ -201,7 +203,7 @@ namespace ModelosColor.UI.ViewModels
 
         public ConvertColorsViewModel()
         {
-
+            update(ColorModel.Rgb);
         }
 
         RgbColor GetBaseColor(ColorModel source)
@@ -325,7 +327,6 @@ namespace ModelosColor.UI.ViewModels
             OnPropertyChanged("RectColor");
             changingValues = false;
         }
-
 
     }
 }
