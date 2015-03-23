@@ -11,11 +11,11 @@ namespace ModelosColor.Core
     public enum RgbType
     {
         Normalized,
-        Byte, 
+        Byte,
         Percent
     }
 
-    public class RgbColor: IRgbCompatible, IYiqCompatible,ICmykComatible, IXyzCompatible
+    public class RgbColor : IRgbCompatible, IYiqCompatible, ICmykComatible, IXyzCompatible, IHsvCompatible
     {
         #region static values
         static float[,] yiqmatconv ={
@@ -27,9 +27,9 @@ namespace ModelosColor.Core
                                     {0.48872f, 0.31068f, 0.20060f},
                                     {0.17620f, 0.81298f, 0.01081f },
                                     {0.0f, 0.01020f, 0.98980f} 
-                                    };   
-                                                                      
-                                        
+                                    };
+
+
         #endregion
 
         float r, g, b;
@@ -59,12 +59,14 @@ namespace ModelosColor.Core
             set { b = value; }
         }
 
-        public string Hex {
+        public string Hex
+        {
             set { }
 
         }
 
-        public RgbColor(RgbType type = RgbType.Normalized) {
+        public RgbColor(RgbType type = RgbType.Normalized)
+        {
             Type = type;
         }
 
@@ -133,12 +135,12 @@ namespace ModelosColor.Core
                 converted.Y += yiqmatconv[0, i] * colors[i];
                 converted.I += yiqmatconv[1, i] * colors[i];
                 converted.Q += yiqmatconv[2, i] * colors[i];
-               
+
             }
             return converted;
         }
 
-        public CmykColor ToCmyk(CmykType type=CmykType.CmyNormalized)
+        public CmykColor ToCmyk(CmykType type = CmykType.CmyNormalized)
         {
             var color = ToRgb();//normalize
             var converted = new CmykColor();
@@ -162,6 +164,43 @@ namespace ModelosColor.Core
 
             }
             return converted;
+        }
+
+        public HsvColor ToHsv()
+        {
+            HsvColor res = new HsvColor();
+            float mthis, max, delta;
+
+            mthis = this.r < this.g ? this.r : this.g;
+            mthis = mthis < this.b ? mthis : this.b;
+
+            max = this.r > this.g ? this.r : this.g;
+            max = max > this.b ? max : this.b;
+
+            res.V = max;                                // v
+            delta = max - mthis;
+            if (max > 0.0)
+            { // NOTE: if Max is == 0, this divide would cause a crash
+                res.S = (delta / max);                  // s
+            }
+            else
+            {
+                throw new ArgumentException("RGB No valido");
+            }
+            if (this.r >= max)                           // > is bogus, just keeps compilor happy
+                res.H = (this.g - this.b) / delta;        // between yellow & magenta
+            else
+                if (this.g >= max)
+                    res.H = 2.0F + (this.b - this.r) / delta;  // between cyan & yellow
+                else
+                    res.H = 4.0F + (this.r - this.g) / delta;  // between magenta & cyan
+
+            res.H *= 60.0F;                              // degrees
+
+            if (res.H < 0.0)
+                res.H += 360.0F;
+
+            return res;
         }
     }
 }

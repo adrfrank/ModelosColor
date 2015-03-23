@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ModelosColor.Core
 {
-    public class XyzColor : IRgbCompatible, IYiqCompatible, ICmykComatible, IXyzCompatible
+    public class XyzColor : IRgbCompatible, IYiqCompatible, ICmykComatible, IXyzCompatible, IHsvCompatible
     {
         #region static values
         static float[,] rgbmatconv = { 
@@ -65,6 +65,11 @@ namespace ModelosColor.Core
         public XyzColor ToXyz()
         {
             return this;
+        }
+
+        public HsvColor ToHsv()
+        {
+            return ToRgb().ToHsv();
         }
     }
 }
