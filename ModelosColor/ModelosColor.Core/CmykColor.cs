@@ -96,7 +96,7 @@ namespace ModelosColor.Core
             return ToRgb().ToXyz();
         }
 
-        HsvColor ToHsv()
+        public HsvColor ToHsv()
         {
             return ToRgb().ToHsv();
         }

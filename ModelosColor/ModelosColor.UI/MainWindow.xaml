@@ -1,8 +1,194 @@
-﻿<Window x:Class="ModelosColor.UI.MainWindow"
+﻿<Window
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="MainWindow" Height="350" Width="525">
+        xmlns:System="clr-namespace:System;assembly=mscorlib" x:Class="ModelosColor.UI.MainWindow"
+        Title="Modelos de color" Height="258" Width="589" Background="#FFF0F0F0" ResizeMode="NoResize" ToolTip="Modelos de color">
+    <Window.Resources>
+        <System:Double x:Key="TitleSize">13</System:Double>
+        <FontWeight x:Key="TitleFontBold">Bold</FontWeight>
+        <System:Double x:Key="ParamHeight">20</System:Double>
+        <System:Double x:Key="ParamFontSize">11</System:Double>
+        <System:Double x:Key="TitleHeight">25</System:Double>
+        <VerticalAlignment x:Key="ParamVerticalAlignment">Top</VerticalAlignment>
+    </Window.Resources>
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="119*"/>
+            <ColumnDefinition Width="464*"/>
+        </Grid.ColumnDefinitions>
+        <Rectangle Fill="#FF2828A4" Grid.Column="0" Grid.Row="0" Height="91" Margin="10,10,10,0" Stroke="Black" VerticalAlignment="Top"/>
+        <StackPanel Grid.Column="1" Margin="10">
+            <Grid >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition  Width="2*"></ColumnDefinition>
+                    <ColumnDefinition  Width="1*"></ColumnDefinition>
+                    <ColumnDefinition  Width="1*"></ColumnDefinition>
+                    <ColumnDefinition  Width="1*"></ColumnDefinition>
+                    <ColumnDefinition  Width="1*"></ColumnDefinition>
+                    <ColumnDefinition  Width="1*"></ColumnDefinition>
+                    <ColumnDefinition  Width="1*"></ColumnDefinition>
+                    <ColumnDefinition  Width="1*"></ColumnDefinition>
+                    <ColumnDefinition  Width="1*"></ColumnDefinition>
+                    <ColumnDefinition  Width="1*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Label Content="RGB"  Grid.Column="0" FontWeight="{DynamicResource TitleFontBold}" FontSize="{DynamicResource TitleSize}" Height="{DynamicResource TitleHeight}"/>
+                <Label Grid.Column="1" Content="R"  HorizontalAlignment="Right" FontSize="{DynamicResource ParamFontSize}" VerticalAlignment="{DynamicResource ParamVerticalAlignment}"/>
+                <Label Grid.Column="3" Content="G" HorizontalAlignment="Right" FontSize="{DynamicResource ParamFontSize}" VerticalAlignment="{DynamicResource ParamVerticalAlignment}"/>
+                <Label Grid.Column="5" Content="B" HorizontalAlignment="Right" FontSize="{DynamicResource ParamFontSize}" VerticalAlignment="{DynamicResource ParamVerticalAlignment}"></Label>
+                <TextBox Grid.Column="2" x:Name="rgb_r" Text="0" FontSize="{DynamicResource ParamFontSize}" VerticalContentAlignment="Center" VerticalAlignment="Center"/>
+                <TextBox Grid.Column="4" x:Name="rgb_g" FontSize="{DynamicResource ParamFontSize}" VerticalContentAlignment="Center" VerticalAlignment="Center"/>
+                <TextBox Grid.Column="6" x:Name="rgb_b" VerticalContentAlignment="Center" VerticalAlignment="Center" FontSize="{DynamicResource ParamFontSize}"/>
+            </Grid>
+            <Grid >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition  Width="2*"></ColumnDefinition>
+                    <ColumnDefinition  Width="1*"></ColumnDefinition>
+                    <ColumnDefinition  Width="1*"></ColumnDefinition>
+                    <ColumnDefinition  Width="1*"></ColumnDefinition>
+                    <ColumnDefinition  Width="1*"></ColumnDefinition>
+                    <ColumnDefinition  Width="1*"></ColumnDefinition>
+                    <ColumnDefinition  Width="1*"></ColumnDefinition>
+                    <ColumnDefinition  Width="1*"></ColumnDefinition>
+                    <ColumnDefinition  Width="1*"></ColumnDefinition>
+                    <ColumnDefinition  Width="1*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Label Content="RGB (%)"  Grid.Column="0" FontWeight="{DynamicResource TitleFontBold}" FontSize="{DynamicResource TitleSize}" Height="{DynamicResource TitleHeight}"/>
+                <Label Grid.Column="1" Content="R"  HorizontalAlignment="Right" FontSize="{DynamicResource ParamFontSize}" VerticalAlignment="{DynamicResource ParamVerticalAlignment}"/>
+                <Label Grid.Column="3" Content="G" HorizontalAlignment="Right" FontSize="{DynamicResource ParamFontSize}" VerticalAlignment="{DynamicResource ParamVerticalAlignment}"/>
+                <Label Grid.Column="5" Content="B" HorizontalAlignment="Right" FontSize="{DynamicResource ParamFontSize}" VerticalAlignment="{DynamicResource ParamVerticalAlignment}"></Label>
+                <TextBox Grid.Column="2" x:Name="rgbperc_r" Text="0" FontSize="{DynamicResource ParamFontSize}" VerticalContentAlignment="Center" VerticalAlignment="Center"/>
+                <TextBox Grid.Column="4" x:Name="rgbperc_g" FontSize="{DynamicResource ParamFontSize}" VerticalContentAlignment="Center" VerticalAlignment="Center"/>
+                <TextBox Grid.Column="6" x:Name="rgbperc_b" VerticalContentAlignment="Center" VerticalAlignment="Center" FontSize="{DynamicResource ParamFontSize}"/>
+            </Grid>
+            <Grid >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition  Width="2*"></ColumnDefinition>
+                    <ColumnDefinition  Width="1*"></ColumnDefinition>
+                    <ColumnDefinition  Width="1*"></ColumnDefinition>
+                    <ColumnDefinition  Width="1*"></ColumnDefinition>
+                    <ColumnDefinition  Width="1*"></ColumnDefinition>
+                    <ColumnDefinition  Width="1*"></ColumnDefinition>
+                    <ColumnDefinition  Width="1*"></ColumnDefinition>
+                    <ColumnDefinition  Width="1*"></ColumnDefinition>
+                    <ColumnDefinition  Width="1*"></ColumnDefinition>
+                    <ColumnDefinition  Width="1*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Label Content="RGB (Byte)"  Grid.Column="0" FontWeight="{DynamicResource TitleFontBold}" FontSize="{DynamicResource TitleSize}" Height="{DynamicResource TitleHeight}"/>
+                <Label Grid.Column="1" Content="R"  HorizontalAlignment="Right" FontSize="{DynamicResource ParamFontSize}" VerticalAlignment="{DynamicResource ParamVerticalAlignment}"/>
+                <Label Grid.Column="3" Content="G" HorizontalAlignment="Right" FontSize="{DynamicResource ParamFontSize}" VerticalAlignment="{DynamicResource ParamVerticalAlignment}"/>
+                <Label Grid.Column="5" Content="B" HorizontalAlignment="Right" FontSize="{DynamicResource ParamFontSize}" VerticalAlignment="{DynamicResource ParamVerticalAlignment}"></Label>
+                <TextBox Grid.Column="2" x:Name="rgbbyte_r" Text="0" FontSize="{DynamicResource ParamFontSize}" VerticalContentAlignment="Center" VerticalAlignment="Center"/>
+                <TextBox Grid.Column="4" x:Name="rgbbyte_g" FontSize="{DynamicResource ParamFontSize}" VerticalContentAlignment="Center" VerticalAlignment="Center"/>
+                <TextBox Grid.Column="6" x:Name="rgbbyte_b" VerticalContentAlignment="Center" VerticalAlignment="Center" FontSize="{DynamicResource ParamFontSize}"/>
+            </Grid>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition  Width="2*"></ColumnDefinition>
+                    <ColumnDefinition  Width="1*"></ColumnDefinition>
+                    <ColumnDefinition  Width="1*"></ColumnDefinition>
+                    <ColumnDefinition  Width="1*"></ColumnDefinition>
+                    <ColumnDefinition  Width="1*"></ColumnDefinition>
+                    <ColumnDefinition  Width="1*"></ColumnDefinition>
+                    <ColumnDefinition  Width="1*"></ColumnDefinition>
+                    <ColumnDefinition  Width="1*"></ColumnDefinition>
+                    <ColumnDefinition  Width="1*"></ColumnDefinition>
+                    <ColumnDefinition  Width="1*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Label Content="CMY" Grid.Column="0" FontWeight="{DynamicResource TitleFontBold}" FontSize="{DynamicResource TitleSize}" Margin="0" Height="{DynamicResource TitleHeight}"/>
+                <Label Grid.Column="1" Content="C"  HorizontalAlignment="Right" FontSize="{DynamicResource ParamFontSize}" VerticalAlignment="{DynamicResource ParamVerticalAlignment}"></Label>
+                <Label Grid.Column="3" Content="M" HorizontalAlignment="Right" FontSize="{DynamicResource ParamFontSize}" VerticalAlignment="{DynamicResource ParamVerticalAlignment}"></Label>
+                <Label Grid.Column="5" Content="Y" HorizontalAlignment="Right" FontSize="{DynamicResource ParamFontSize}" VerticalAlignment="{DynamicResource ParamVerticalAlignment}"></Label>
+                <TextBox Grid.Column="2" x:Name="cmy_c" VerticalContentAlignment="Center" VerticalAlignment="Center" FontSize="{DynamicResource ParamFontSize}"/>
+                <TextBox Grid.Column="4" x:Name="cmy_m" VerticalContentAlignment="Center" VerticalAlignment="Center" FontSize="{DynamicResource ParamFontSize}"/>
+                <TextBox Grid.Column="6" x:Name="cmy_y" VerticalContentAlignment="Center" VerticalAlignment="Center" FontSize="{DynamicResource ParamFontSize}"/>
+            </Grid>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition  Width="2*"></ColumnDefinition>
+                    <ColumnDefinition  Width="1*"></ColumnDefinition>
+                    <ColumnDefinition  Width="1*"></ColumnDefinition>
+                    <ColumnDefinition  Width="1*"></ColumnDefinition>
+                    <ColumnDefinition  Width="1*"></ColumnDefinition>
+                    <ColumnDefinition  Width="1*"></ColumnDefinition>
+                    <ColumnDefinition  Width="1*"></ColumnDefinition>
+                    <ColumnDefinition  Width="1*"></ColumnDefinition>
+                    <ColumnDefinition  Width="1*"></ColumnDefinition>
+                    <ColumnDefinition  Width="1*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Label Content="CMYK" Grid.Column="0" FontWeight="{DynamicResource TitleFontBold}" FontSize="{DynamicResource TitleSize}" VerticalContentAlignment="Center" Height="{DynamicResource TitleHeight}"/>
+                <Label Grid.Column="1" Content="C"  HorizontalAlignment="Right" FontSize="{DynamicResource ParamFontSize}" VerticalAlignment="{DynamicResource ParamVerticalAlignment}"></Label>
+                <Label Grid.Column="3" Content="M" HorizontalAlignment="Right" FontSize="{DynamicResource ParamFontSize}" VerticalAlignment="{DynamicResource ParamVerticalAlignment}"></Label>
+                <Label Grid.Column="5" Content="Y" HorizontalAlignment="Right" FontSize="{DynamicResource ParamFontSize}" VerticalAlignment="{DynamicResource ParamVerticalAlignment}"></Label>
+                <Label Grid.Column="7" Content="K" HorizontalAlignment="Right" FontSize="{DynamicResource ParamFontSize}" VerticalAlignment="{DynamicResource ParamVerticalAlignment}"></Label>
+                <TextBox Grid.Column="2" x:Name="cmyk_c" VerticalContentAlignment="Center" VerticalAlignment="Center" FontSize="{DynamicResource ParamFontSize}"/>
+                <TextBox Grid.Column="4" x:Name="cmyk_m" VerticalContentAlignment="Center" VerticalAlignment="Center" FontSize="{DynamicResource ParamFontSize}"/>
+                <TextBox Grid.Column="6" x:Name="cmyk_y" VerticalContentAlignment="Center" VerticalAlignment="Center" FontSize="{DynamicResource ParamFontSize}"/>
+                <TextBox Grid.Column="8" x:Name="cmyk_K" VerticalContentAlignment="Center" VerticalAlignment="Center" FontSize="{DynamicResource ParamFontSize}"/>
+            </Grid>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition  Width="2*"></ColumnDefinition>
+                    <ColumnDefinition  Width="1*"></ColumnDefinition>
+                    <ColumnDefinition  Width="1*"></ColumnDefinition>
+                    <ColumnDefinition  Width="1*"></ColumnDefinition>
+                    <ColumnDefinition  Width="1*"></ColumnDefinition>
+                    <ColumnDefinition  Width="1*"></ColumnDefinition>
+                    <ColumnDefinition  Width="1*"></ColumnDefinition>
+                    <ColumnDefinition  Width="1*"></ColumnDefinition>
+                    <ColumnDefinition  Width="1*"></ColumnDefinition>
+                    <ColumnDefinition  Width="1*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Label Content="HSV" Grid.Column="0" FontWeight="{DynamicResource TitleFontBold}" FontSize="{DynamicResource TitleSize}" Height="{DynamicResource TitleHeight}"/>
+                <Label Grid.Column="1" Content="H"  HorizontalAlignment="Right" FontSize="{DynamicResource ParamFontSize}" VerticalAlignment="{DynamicResource ParamVerticalAlignment}"></Label>
+                <Label Grid.Column="3" Content="S" HorizontalAlignment="Right" FontSize="{DynamicResource ParamFontSize}" VerticalAlignment="{DynamicResource ParamVerticalAlignment}"></Label>
+                <Label Grid.Column="5" Content="V" HorizontalAlignment="Right" FontSize="{DynamicResource ParamFontSize}" VerticalAlignment="{DynamicResource ParamVerticalAlignment}"></Label>
+                <TextBox Grid.Column="2" x:Name="hsv_h" VerticalContentAlignment="Center" VerticalAlignment="Center" FontSize="{DynamicResource ParamFontSize}"/>
+                <TextBox Grid.Column="4" x:Name="hsv_s" VerticalContentAlignment="Center" VerticalAlignment="Center" FontSize="{DynamicResource ParamFontSize}"/>
+                <TextBox Grid.Column="6" x:Name="hsv_v" VerticalContentAlignment="Center" VerticalAlignment="Center" FontSize="{DynamicResource ParamFontSize}"/>
+            </Grid>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition  Width="2*"></ColumnDefinition>
+                    <ColumnDefinition  Width="1*"></ColumnDefinition>
+                    <ColumnDefinition  Width="1*"></ColumnDefinition>
+                    <ColumnDefinition  Width="1*"></ColumnDefinition>
+                    <ColumnDefinition  Width="1*"></ColumnDefinition>
+                    <ColumnDefinition  Width="1*"></ColumnDefinition>
+                    <ColumnDefinition  Width="1*"></ColumnDefinition>
+                    <ColumnDefinition  Width="1*"></ColumnDefinition>
+                    <ColumnDefinition  Width="1*"></ColumnDefinition>
+                    <ColumnDefinition  Width="1*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Label Content="YIQ" Grid.Column="0" FontWeight="{DynamicResource TitleFontBold}" FontSize="{DynamicResource TitleSize}" Height="{DynamicResource TitleHeight}"/>
+                <Label Grid.Column="1" Content="Y"  HorizontalAlignment="Right" FontSize="{DynamicResource ParamFontSize}" VerticalAlignment="{DynamicResource ParamVerticalAlignment}"></Label>
+                <Label Grid.Column="3" Content="I" HorizontalAlignment="Right" FontSize="{DynamicResource ParamFontSize}" VerticalAlignment="{DynamicResource ParamVerticalAlignment}"></Label>
+                <Label Grid.Column="5" Content="Q" HorizontalAlignment="Right" FontSize="{DynamicResource ParamFontSize}" VerticalAlignment="{DynamicResource ParamVerticalAlignment}"></Label>
+                <TextBox Grid.Column="2" x:Name="yiq_y" VerticalContentAlignment="Center" VerticalAlignment="Center" FontSize="{DynamicResource ParamFontSize}"/>
+                <TextBox Grid.Column="4" x:Name="yiq_i" VerticalContentAlignment="Center" VerticalAlignment="Center" FontSize="{DynamicResource ParamFontSize}"/>
+                <TextBox Grid.Column="6" x:Name="yiq_q" VerticalContentAlignment="Center" VerticalAlignment="Center" FontSize="{DynamicResource ParamFontSize}"/>
+            </Grid>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition  Width="2*"></ColumnDefinition>
+                    <ColumnDefinition  Width="1*"></ColumnDefinition>
+                    <ColumnDefinition  Width="1*"></ColumnDefinition>
+                    <ColumnDefinition  Width="1*"></ColumnDefinition>
+                    <ColumnDefinition  Width="1*"></ColumnDefinition>
+                    <ColumnDefinition  Width="1*"></ColumnDefinition>
+                    <ColumnDefinition  Width="1*"></ColumnDefinition>
+                    <ColumnDefinition  Width="1*"></ColumnDefinition>
+                    <ColumnDefinition  Width="1*"></ColumnDefinition>
+                    <ColumnDefinition  Width="1*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Label Content="XYZ" Grid.Column="0" FontWeight="{DynamicResource TitleFontBold}" FontSize="{DynamicResource TitleSize}" Height="{DynamicResource TitleHeight}"/>
+                <Label Grid.Column="1" Content="X"  HorizontalAlignment="Right" FontSize="{DynamicResource ParamFontSize}" VerticalAlignment="{DynamicResource ParamVerticalAlignment}"></Label>
+                <Label Grid.Column="3" Content="Y" HorizontalAlignment="Right" FontSize="{DynamicResource ParamFontSize}" VerticalAlignment="{DynamicResource ParamVerticalAlignment}"></Label>
+                <Label Grid.Column="5" Content="Z" HorizontalAlignment="Right" FontSize="{DynamicResource ParamFontSize}" VerticalAlignment="{DynamicResource ParamVerticalAlignment}"></Label>
+                <TextBox Grid.Column="2" x:Name="xyz_x" VerticalContentAlignment="Center" VerticalAlignment="Center" FontSize="{DynamicResource ParamFontSize}"/>
+                <TextBox Grid.Column="4" x:Name="xyz_y" VerticalContentAlignment="Center" VerticalAlignment="Center" FontSize="{DynamicResource ParamFontSize}"/>
+                <TextBox Grid.Column="6" x:Name="xyz_z" VerticalContentAlignment="Center" VerticalAlignment="Center" FontSize="{DynamicResource ParamFontSize}"/>
+            </Grid>
+        </StackPanel>
+
     </Grid>
 </Window>
